@@ -12,6 +12,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
+        <!-- 1) Display -->
         <TextBox x:Name="txtDisplay"
                  Grid.Row="0"
                  Text="0"
@@ -21,8 +22,45 @@
                  IsReadOnly="True"
                  VerticalContentAlignment="Center"
                  HorizontalAlignment="Stretch" />
+
+        <!-- 2) Button Grid -->
         <Grid Grid.Row="1" Margin="10">
-            
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <!-- Row 0 -->
+            <Button Content="7" Grid.Row="0" Grid.Column="0" Click="NumberButton_Click" />
+            <Button Content="8" Grid.Row="0" Grid.Column="1" Click="NumberButton_Click" />
+            <Button Content="9" Grid.Row="0" Grid.Column="2" Click="NumberButton_Click" />
+            <Button Content="÷" Grid.Row="0" Grid.Column="3" Click="OperatorButton_Click" />
+
+            <!-- Row 1 -->
+            <Button Content="4" Grid.Row="1" Grid.Column="0" Click="NumberButton_Click" />
+            <Button Content="5" Grid.Row="1" Grid.Column="1" Click="NumberButton_Click" />
+            <Button Content="6" Grid.Row="1" Grid.Column="2" Click="NumberButton_Click" />
+            <Button Content="×" Grid.Row="1" Grid.Column="3" Click="OperatorButton_Click" />
+
+            <!-- Row 2 -->
+            <Button Content="1" Grid.Row="2" Grid.Column="0" Click="NumberButton_Click" />
+            <Button Content="2" Grid.Row="2" Grid.Column="1" Click="NumberButton_Click" />
+            <Button Content="3" Grid.Row="2" Grid.Column="2" Click="NumberButton_Click" />
+            <Button Content="-" Grid.Row="2" Grid.Column="3" Click="OperatorButton_Click" />
+
+            <!-- Row 3 -->
+            <Button Content="0" Grid.Row="3" Grid.Column="0" Click="NumberButton_Click" />
+            <Button Content="." Grid.Row="3" Grid.Column="1" Click="NumberButton_Click" />
+            <Button Content="=" Grid.Row="3" Grid.Column="2" Click="EqualButton_Click" />
+            <Button Content="+" Grid.Row="3" Grid.Column="3" Click="OperatorButton_Click" />
         </Grid>
     </Grid>
 </Window>
