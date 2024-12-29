@@ -27,6 +27,7 @@ namespace WpfCalculator
         public MainWindow()
         {
             InitializeComponent();
+            UpdateCEButtonState();
         }
 
         private void NumberButton_Click(object sender, RoutedEventArgs e)
@@ -43,6 +44,9 @@ namespace WpfCalculator
             {
                 txtDisplay.Text += numberOrDot;
             }
+
+            UpdateCEButtonState();
+
         }
 
         private void OperatorButton_Click(object sender, RoutedEventArgs e)
@@ -65,6 +69,9 @@ namespace WpfCalculator
 
             _currentOperator = newOperator;
             _isOperatorClicked = true;
+
+            UpdateCEButtonState();
+
         }
 
         private void Calculate(double secondValue)
@@ -101,6 +108,9 @@ namespace WpfCalculator
                 txtDisplay.Text = _currentValue.ToString();
 
                 _currentOperator = string.Empty;
+
+                UpdateCEButtonState();
+
             }
         }
 
@@ -113,6 +123,8 @@ namespace WpfCalculator
 
             // Clear the text display
             txtDisplay.Text = "0";
+
+            UpdateCEButtonState();
         }
 
         private void ClearEntryButton_Click(object sender, RoutedEventArgs e)
@@ -120,6 +132,13 @@ namespace WpfCalculator
             //Only reset display
             txtDisplay.Text = "0";
             _isOperatorClicked = false;
+
+            UpdateCEButtonState();
+        }
+
+        private void UpdateCEButtonState()
+        {
+            btnCE.IsEnabled = txtDisplay.Text != "0";
         }
     }
 }
