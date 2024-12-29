@@ -103,5 +103,23 @@ namespace WpfCalculator
                 _currentOperator = string.Empty;
             }
         }
+
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Clear all fields
+            _currentValue = 0;
+            _currentOperator = string.Empty;
+            _isOperatorClicked = false;
+
+            // Clear the text display
+            txtDisplay.Text = "0";
+        }
+
+        private void ClearEntryButton_Click(object sender, RoutedEventArgs e)
+        {
+            //Only reset display
+            txtDisplay.Text = "0";
+            _isOperatorClicked = false;
+        }
     }
 }
